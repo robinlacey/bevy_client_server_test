@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    ports:
+      - "1234:14191"
+  client:
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile
+    links:
+      - server
+    ports:
+      - "8080:80"

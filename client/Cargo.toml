@@ -1,0 +1,39 @@
+[package]
+name = "client"
+version = "0.1.0"
+authors = []
+edition = "2018"
+
+# From https://github.com/mrk-its/bevy_webgl2_app_template
+[features]
+default = [
+    "bevy/bevy_gltf",
+    "bevy/bevy_winit",
+    "bevy/render",
+    "bevy/png",
+]
+
+native = [
+    "bevy/bevy_wgpu",
+]
+
+web = [
+    "bevy_webgl2"
+]
+
+[dependencies]
+serde = "1.0.118"
+# Required to debug WASM
+console_error_panic_hook = "0.1.6"
+wasm-bindgen = { version = "0.2.69"}
+#bevy_networking_turbulence = { git = "https://github.com/smokku/bevy_networking_turbulence", rev = "24ea73a937cd70bab21c2a81bcab9797081577d4" }
+
+# To test, forked and updated library Cargo so connect() used naia wasm connect()
+bevy_networking_turbulence = { git = "https://github.com/robinlacey/bevy_networking_turbulence.git" }
+bevy = {version="0.4.0", default-features=false}
+bevy_webgl2 = {version="0.4.0", optional=true}
+winit = {version = "0.24.0"}
+uuid = {version="=0.8.1"}
+web-sys = "0.3.22"
+url = "2.2.0"
+

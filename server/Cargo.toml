@@ -1,0 +1,15 @@
+[package]
+name = "server"
+version = "0.1.0"
+authors = ["Robin Lacey <robindelacey@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+#Bevy Networking Librry
+#bevy_networking_turbulence = { git = "https://github.com/smokku/bevy_networking_turbulence", rev = "24ea73a937cd70bab21c2a81bcab9797081577d4" }
+# To test, forked and updated library Cargo so connect() used naia wasm connect()
+bevy_networking_turbulence = { git = "https://github.com/robinlacey/bevy_networking_turbulence.git", rev = "fd2a134cf915c74ac219f4777a47fadbc289682b" }
+serde = "1.0.118"
+bevy = {version="0.4.0", default-features=false}
