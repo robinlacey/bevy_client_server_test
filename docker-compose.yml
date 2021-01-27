@@ -5,7 +5,8 @@ services:
       context: ./server
       dockerfile: ./Dockerfile
     ports:
-      - "1234:14191"
+      - "14191:14191"
+      - "8000:8000"
   client:
     build:
       context: ./client
